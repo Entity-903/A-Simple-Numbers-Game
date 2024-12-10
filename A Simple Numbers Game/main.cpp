@@ -1,4 +1,5 @@
-// A Simple Numbers Game.cpp : This file contains the 'main' function. Program execution begins and ends there. File renamed to "main"
+// A Simple Numbers Game.cpp : This file contains the 'main' function. Program execution begins and ends there. 
+// File renamed to "main"
 //
 
 #include <iostream>
@@ -6,11 +7,25 @@
 
 int main()
 {
+    Numbers game;
     bool finish = false;
     while (finish == false)
     {
         //Numbers::Start();   
-        if (Numbers::Start() == 2) std::cout << "\nToo bad!"; finish = true;
+        if (game.Numbers::Start() == 1)
+        {
+            std::cout << "\nNeat!"; 
+            std::cout << "\n\nThe computer accepts the challenge!";
+            int victor = game.Numbers::Game();
+            //std::cout << "Player " << victor << " is the winner!";
+            finish = true;
+        }
+        else
+        {
+            std::cout << "\nToo bad!"; 
+            finish = true;
+        }
+
     }
     return 0;
 }
