@@ -8,15 +8,17 @@
 int main()
 {
     Numbers game;
+    int players;
     bool finish = false;
     while (finish == false)
     {
-        //Numbers::Start();   
-        if (game.Numbers::Start() == 1)
+        // How do I get cin to not have a seizure when a non-numeric value is given for an int variable?
+        players = game.Numbers::Start();  
+        if (players == 1)
         {
             std::cout << "\nNeat!"; 
             std::cout << "\n\nThe computer accepts the challenge!";
-            int victor = game.Numbers::Game();
+            int victor = game.Numbers::Game(players);
             //std::cout << "Player " << victor << " is the winner!";
             finish = true;
         }
